@@ -1,4 +1,4 @@
-package test;
+package test.google;
 
 import com.UserOperations;
 import org.junit.After;

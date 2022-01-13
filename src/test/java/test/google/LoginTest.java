@@ -1,4 +1,4 @@
-package test;
+package test.google;
 
 import com.UserOperations;
 import org.junit.After;
@@ -53,8 +53,6 @@ public class LoginTest {
         //клик по кнопке Личный кабинет
         LoginPage loginPage = mainPage.clickPersonButton();
         //заполняем креды для входа
-        System.out.println("email " + credentials.get("email"));
-        System.out.println(credentials.get("password"));
         loginPage.login(credentials.get("email"), credentials.get("password"));
         //проверяем, что после Входа перенаправляемся на Главную страницу
         mainPage.checkCreateOrderButton();

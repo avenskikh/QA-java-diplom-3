@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: test.google.LoginTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.318 s - in test.google.LoginTest

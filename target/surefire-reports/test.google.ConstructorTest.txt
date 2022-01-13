@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: test.LoginTest
+Test set: test.google.ConstructorTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.457 s - in test.LoginTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 24.965 s - in test.google.ConstructorTest

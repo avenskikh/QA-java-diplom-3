@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: test.ProfileTest
+Test set: test.yandex.ConstructorTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.967 s - in test.ProfileTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.755 s - in test.yandex.ConstructorTest
