@@ -15,10 +15,12 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class LoginTest {
     private UserOperations userOperations;
+    public static final String BASE_URL = "https://stellarburgers.nomoreparties.site";
+
 
     @After
     public void deleteUser() {
-        new UserOperations().delete();
+        userOperations.delete();
     }
 
     @Before
@@ -33,7 +35,7 @@ public class LoginTest {
         System.setProperty("webdriver.chrome.driver", "C:/yandexdriver-22.1.0.2410-win/yandexdriver.exe");
         //открывается страница и создаётся экземпляр класса страницы
         MainPage mainPage =
-                open("https://stellarburgers.nomoreparties.site",
+                open(BASE_URL,
                         MainPage.class);
         //клик по кнопке Войти в аккаунт на главной
         LoginPage loginPage = mainPage.clickEnterButton();
@@ -50,7 +52,7 @@ public class LoginTest {
         System.setProperty("webdriver.chrome.driver", "C:/yandexdriver-22.1.0.2410-win/yandexdriver.exe");
         //открывается страница и создаётся экземпляр класса страницы
         MainPage mainPage =
-                open("https://stellarburgers.nomoreparties.site",
+                open(BASE_URL,
                         MainPage.class);
         //клик по кнопке Личный кабинет
         LoginPage loginPage = mainPage.clickPersonButton();
@@ -67,7 +69,7 @@ public class LoginTest {
         System.setProperty("webdriver.chrome.driver", "C:/yandexdriver-22.1.0.2410-win/yandexdriver.exe");
         //открывается страница и создаётся экземпляр класса страницы
         MainPage mainPage =
-                open("https://stellarburgers.nomoreparties.site",
+                open(BASE_URL,
                         MainPage.class);
         //клик по кнопке Войти в аккаунт
         LoginPage loginPage = mainPage.clickEnterButton();
@@ -88,7 +90,7 @@ public class LoginTest {
         System.setProperty("webdriver.chrome.driver", "C:/yandexdriver-22.1.0.2410-win/yandexdriver.exe");
         //открывается страница и создаётся экземпляр класса страницы
         MainPage mainPage =
-                open("https://stellarburgers.nomoreparties.site",
+                open(BASE_URL,
                         MainPage.class);
         //клик по кнопке Войти в аккаунт на главной
         LoginPage loginPage = mainPage.clickEnterButton();

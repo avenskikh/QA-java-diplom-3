@@ -12,14 +12,14 @@ public class RegistrationTest {
     String email = RandomStringUtils.randomAlphabetic(10) + "@yandex.ru";
     String password = RandomStringUtils.randomAlphabetic(10);
     String name = RandomStringUtils.randomAlphabetic(10);
-
+    public static final String BASE_URL = "https://stellarburgers.nomoreparties.site";
 
     @Test
     public void registration() {
         System.setProperty("webdriver.chrome.driver", "C:/yandexdriver-22.1.0.2410-win/yandexdriver.exe");
         //открывается страница и создаётся экземпляр класса страницы
         MainPage mainPage =
-                open("https://stellarburgers.nomoreparties.site",
+                open(BASE_URL,
                         MainPage.class);
         //клик по кнопке Войти в аккаунт
         LoginPage loginPage = mainPage.clickEnterButton();
@@ -36,7 +36,7 @@ public class RegistrationTest {
         System.setProperty("webdriver.chrome.driver", "C:/yandexdriver-22.1.0.2410-win/yandexdriver.exe");
         //открывается страница и создаётся экземпляр класса страницы
         MainPage mainPage =
-                open("https://stellarburgers.nomoreparties.site",
+                open(BASE_URL,
                         MainPage.class);
         //клик по кнопке Войти в аккаунт
         LoginPage loginPage = mainPage.clickEnterButton();
