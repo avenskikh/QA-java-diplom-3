@@ -65,7 +65,7 @@ public class RegistrationPage {
     }
 
     //метод проверки текста ошибки
-    public void checkText(String text) {
+    public void checkErrorText(String text) {
         textError.shouldHave(exactText(text));
     }
 

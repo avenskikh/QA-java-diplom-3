@@ -15,10 +15,11 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class LoginTest {
     private UserOperations userOperations;
+    public static final String BASE_URL = "https://stellarburgers.nomoreparties.site";
 
     @After
     public void deleteUser() {
-        new UserOperations().delete();
+        userOperations.delete();
     }
 
     @Before
@@ -32,7 +33,7 @@ public class LoginTest {
         Map<String, String> credentials = userOperations.register();
         //открывается страница и создаётся экземпляр класса страницы
         MainPage mainPage =
-                open("https://stellarburgers.nomoreparties.site",
+                open(BASE_URL,
                         MainPage.class);
         //клик по кнопке Войти в аккаунт на главной
         LoginPage loginPage = mainPage.clickEnterButton();
@@ -48,7 +49,7 @@ public class LoginTest {
         Map<String, String> credentials = userOperations.register();
         //открывается страница и создаётся экземпляр класса страницы
         MainPage mainPage =
-                open("https://stellarburgers.nomoreparties.site",
+                open(BASE_URL,
                         MainPage.class);
         //клик по кнопке Личный кабинет
         LoginPage loginPage = mainPage.clickPersonButton();
@@ -64,7 +65,7 @@ public class LoginTest {
         Map<String, String> credentials = userOperations.register();
         //открывается страница и создаётся экземпляр класса страницы
         MainPage mainPage =
-                open("https://stellarburgers.nomoreparties.site",
+                open(BASE_URL,
                         MainPage.class);
         //клик по кнопке Войти в аккаунт
         LoginPage loginPage = mainPage.clickEnterButton();
@@ -84,13 +85,13 @@ public class LoginTest {
         Map<String, String> credentials = userOperations.register();
         //открывается страница и создаётся экземпляр класса страницы
         MainPage mainPage =
-                open("https://stellarburgers.nomoreparties.site",
+                open(BASE_URL,
                         MainPage.class);
         //клик по кнопке Войти в аккаунт на главной
         LoginPage loginPage = mainPage.clickEnterButton();
         //клик по кнопке Восстановить пароль
         PasswordPage passwordPage = loginPage.clickRefreshPasswordButton();
-        //клие по кнопке Войти, если вспомнили пароль
+        //клик по кнопке Войти, если вспомнили пароль
         LoginPage loginPage1 = passwordPage.clickRegisterButton();
         //заполняем креды для входа
         loginPage1.login(credentials.get("email"), credentials.get("password"));

@@ -44,6 +44,6 @@ public class RegistrationTest {
         RegistrationPage registrationPage = loginPage.clickRegisterButton();
         //заполняем информацию по регистрации нового пользователя
         registrationPage.registration(name, "23454", email);
-        registrationPage.checkText("Некорректный пароль");
+        registrationPage.checkErrorText("Некорректный пароль");
     }
 }

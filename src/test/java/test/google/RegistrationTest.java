@@ -12,13 +12,15 @@ public class RegistrationTest {
     String email = RandomStringUtils.randomAlphabetic(10) + "@yandex.ru";
     String password = RandomStringUtils.randomAlphabetic(10);
     String name = RandomStringUtils.randomAlphabetic(10);
+    public static final String BASE_URL = "https://stellarburgers.nomoreparties.site";
+
 
 
     @Test
     public void registration() {
         //открывается страница и создаётся экземпляр класса страницы
         MainPage mainPage =
-                open("https://stellarburgers.nomoreparties.site",
+                open(BASE_URL,
                         MainPage.class);
         //клик по кнопке Войти в аккаунт
         LoginPage loginPage = mainPage.clickEnterButton();
@@ -34,7 +36,7 @@ public class RegistrationTest {
     public void registrationWithIncorrectPass() {
         //открывается страница и создаётся экземпляр класса страницы
         MainPage mainPage =
-                open("https://stellarburgers.nomoreparties.site",
+                open(BASE_URL,
                         MainPage.class);
         //клик по кнопке Войти в аккаунт
         LoginPage loginPage = mainPage.clickEnterButton();
@@ -42,6 +44,6 @@ public class RegistrationTest {
         RegistrationPage registrationPage = loginPage.clickRegisterButton();
         //заполняем информацию по регистрации нового пользователя
         registrationPage.registration(name, "23454", email);
-        registrationPage.checkText("Некорректный пароль");
+        registrationPage.checkErrorText("Некорректный пароль");
     }
 }

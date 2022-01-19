@@ -14,6 +14,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class ConstructorTest {
     private UserOperations userOperations;
 
+
     @After
     public void deleteUser() {
         new UserOperations().delete();
@@ -24,7 +25,7 @@ public class ConstructorTest {
         userOperations = new UserOperations();
     }
 
-    @Test
+    @Test()
     public void checkJumpBetweenSections() {
         Map<String, String> credentials = userOperations.register();
         System.setProperty("webdriver.chrome.driver", "C:/yandexdriver-22.1.0.2410-win/yandexdriver.exe");

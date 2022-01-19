@@ -13,10 +13,12 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class ConstructorTest {
     private UserOperations userOperations;
+    public static final String BASE_URL = "https://stellarburgers.nomoreparties.site";
+
 
     @After
     public void deleteUser() {
-        new UserOperations().delete();
+        userOperations.delete();
     }
 
     @Before
@@ -30,7 +32,7 @@ public class ConstructorTest {
         Map<String, String> credentials = userOperations.register();
         //открывается страница и создаётся экземпляр класса страницы
         MainPage mainPage =
-                open("https://stellarburgers.nomoreparties.site",
+                open(BASE_URL,
                         MainPage.class);
         //клик по кнопке Войти в аккаунт на главной
         LoginPage loginPage = mainPage.clickEnterButton();
