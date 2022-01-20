@@ -1,6 +1,7 @@
 package test.google;
 
 import com.UserOperations;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,6 +28,7 @@ public class ConstructorTest {
     }
 
     @Test
+    @DisplayName("Проверка перехода по разделам конструктора")
     public void checkJumpBetweenSections() {
         //регистрация нового пользователя
         Map<String, String> credentials = userOperations.register();

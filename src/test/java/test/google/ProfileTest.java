@@ -1,6 +1,7 @@
 package test.google;
 
 import com.UserOperations;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,6 +28,7 @@ public class ProfileTest {
     }
 
     @Test
+    @DisplayName("Проверка выхода по кнопке «Выйти» в личном кабинете")
     public void exitFromProfile() {
         //регистрация нового пользователя
         Map<String, String> credentials = userOperations.register();
@@ -47,6 +49,7 @@ public class ProfileTest {
     }
 
     @Test
+    @DisplayName("Проверка перехода на главную страницу по клику на «Конструктор»")
     public void goToMainPageFromConstructor() {
         //регистрация нового пользователя
         Map<String, String> credentials = userOperations.register();
@@ -67,6 +70,7 @@ public class ProfileTest {
     }
 
     @Test
+    @DisplayName("Проверка перехода на главную страницу по клику на логотип Stellar Burgers")
     public void goToMainPageFromLogo() {
         //регистрация нового пользователя
         Map<String, String> credentials = userOperations.register();

@@ -1,6 +1,7 @@
 package po;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -32,42 +33,49 @@ public class LoginPage {
     @FindBy(how = How.XPATH, using = "//*[text()='Восстановить пароль']")
     private SelenideElement refreshPasswordButton;
 
+    @Step
     //метод клика по кнопке Зарегистрироваться
     public RegistrationPage clickRegisterButton() {
-        this.registerButton.scrollTo();
-        this.registerButton.click();
+        registerButton.scrollTo();
+        registerButton.click();
         return page(RegistrationPage.class);
     }
 
+    @Step
     //метод проверки перенаправления на страницу Входа
     public RegistrationPage checkLoginPage() {
-        this.loginPage.scrollTo();
+        loginPage.scrollTo();
         return page(RegistrationPage.class);
     }
 
+    @Step
     //метод заполнения поля ввода email
     public void setEmail(String email) {
         this.email.setValue(email);
     }
 
+    @Step
     //метод заполнения поля ввода password
     public void setPassword(String password) {
         this.password.setValue(password);
     }
 
+    @Step
     //метод клика по кнопке Войти
     public void clickLoginButton() {
-        this.loginButton.scrollTo();
-        this.loginButton.click();
+        loginButton.scrollTo();
+        loginButton.click();
     }
 
+    @Step
     //метод клика по кнопке Восстановить пароль
     public PasswordPage clickRefreshPasswordButton() {
-        this.refreshPasswordButton.scrollTo();
-        this.refreshPasswordButton.click();
+        refreshPasswordButton.scrollTo();
+        refreshPasswordButton.click();
         return page(PasswordPage.class);
     }
 
+    @Step
     //метод логина пользователя
     public void login( String email, String password) {
         setEmail(email);

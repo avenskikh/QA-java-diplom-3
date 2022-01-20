@@ -1,6 +1,7 @@
 package po;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -45,66 +46,77 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = ".//*[@class='text text_type_main-medium mb-6 mt-10' and text()='Булки']")
     private SelenideElement breadsSection;
 
+    @Step
     //метод клика по кнопке Войти в аккаунт
     public LoginPage clickEnterButton() {
-        this.enterButton.scrollTo();
-        this.enterButton.click();
+        enterButton.scrollTo();
+        enterButton.click();
         return page(LoginPage.class);
     }
 
+    @Step
     //метод клика по кнопке Личный кабинет незалогиненного пользователя
     public LoginPage clickPersonButton() {
-        this.personButton.scrollTo();
-        this.personButton.click();
+        personButton.scrollTo();
+        personButton.click();
         return page(LoginPage.class);
     }
 
+    @Step
     //метод клика по кнопке Личный кабинет залогиненного пользователя
     public ProfilePage clickProfileButton() {
-        this.personButton.scrollTo();
-        this.personButton.click();
+        personButton.scrollTo();
+        personButton.click();
         return page(ProfilePage.class);
     }
 
+    @Step
     //метод проверки наличия кнопки Оформить заказ
     public LoginPage checkCreateOrderButton() {
         this.createOrderButton.scrollTo();
         return page(LoginPage.class);
     }
 
+    @Step
     //метод клика по кнопке Начинки
     public void clickStuffingButton() {
-        this.stuffingButton.scrollTo();
-        this.stuffingButton.click();
+        stuffingButton.scrollTo();
+        stuffingButton.click();
     }
 
+    @Step
     //метод проверки корректности отображения раздела Начинки
     public void checkStuffingSectionText() {
         stuffingSection.shouldHave(exactText("Начинки"));
     }
 
+    @Step
     //метод клика по кнопке Соусы
     public void clickSaucesButton() {
-        this.saucesButton.scrollTo();
-        this.saucesButton.click();
+        saucesButton.scrollTo();
+        saucesButton.click();
     }
 
+    @Step
     //метод проверки корректности отображения раздела Соусы
     public void checkSaucesSectionText() {
         saucesSection.shouldHave(exactText("Соусы"));
     }
 
+    @Step
     //метод клика по кнопке Булки
     public void clickBreadsButton() {
-        this.breadsButton.scrollTo();
-        this.breadsButton.click();
+        breadsButton.scrollTo();
+        breadsButton.click();
     }
 
+    @Step
     //метод проверки корректности отображения раздела Булки
     public void checkBreadsSectionText() {
         breadsSection.shouldHave(exactText("Булки"));
     }
 
+    @Step
     //метод проверки перехода между разделами
     public void checkSections() {
         clickStuffingButton();

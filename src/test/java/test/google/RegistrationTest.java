@@ -1,5 +1,6 @@
 package test.google;
 
+import io.qameta.allure.junit4.DisplayName;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
 import po.LoginPage;
@@ -17,6 +18,7 @@ public class RegistrationTest {
 
 
     @Test
+    @DisplayName("Проверка успешной регистрации")
     public void registration() {
         //открывается страница и создаётся экземпляр класса страницы
         MainPage mainPage =
@@ -33,6 +35,7 @@ public class RegistrationTest {
     }
 
     @Test
+    @DisplayName("Проверка ошибки при вводе некорректного пароля")
     public void registrationWithIncorrectPass() {
         //открывается страница и создаётся экземпляр класса страницы
         MainPage mainPage =

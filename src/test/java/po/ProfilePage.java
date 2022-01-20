@@ -1,6 +1,7 @@
 package po;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -20,24 +21,27 @@ public class ProfilePage {
     @FindBy(how = How.XPATH, using = ".//*[@class='AppHeader_header__logo__2D0X2']")
     private SelenideElement logo;
 
+    @Step
     //метод клика по кнопке Выход
     public MainPage clickExitButton() {
-        this.exitButton.scrollTo();
-        this.exitButton.click();
+        exitButton.scrollTo();
+        exitButton.click();
         return page(MainPage.class);
     }
 
+    @Step
     //метод клика по кнопке Конструктор
     public MainPage clickConstructorButton() {
-        this.constructorButton.scrollTo();
-        this.constructorButton.click();
+        constructorButton.scrollTo();
+        constructorButton.click();
         return page(MainPage.class);
     }
 
+    @Step
     //метод клика по логотипу
     public MainPage clickLogo() {
-        this.logo.scrollTo();
-        this.logo.click();
+        logo.scrollTo();
+        logo.click();
         return page(MainPage.class);
     }
 }

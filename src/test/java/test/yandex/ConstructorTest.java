@@ -1,6 +1,7 @@
 package test.yandex;
 
 import com.UserOperations;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,11 +14,12 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class ConstructorTest {
     private UserOperations userOperations;
+    public static final String BASE_URL = "https://stellarburgers.nomoreparties.site";
 
 
     @After
     public void deleteUser() {
-        new UserOperations().delete();
+        userOperations.delete();
     }
 
     @Before
@@ -26,11 +28,12 @@ public class ConstructorTest {
     }
 
     @Test()
+    @DisplayName("Проверка перехода по разделам конструктора")
     public void checkJumpBetweenSections() {
         Map<String, String> credentials = userOperations.register();
         System.setProperty("webdriver.chrome.driver", "C:/yandexdriver-22.1.0.2410-win/yandexdriver.exe");
         MainPage mainPage =
-                open("https://stellarburgers.nomoreparties.site",
+                open(BASE_URL,
                         MainPage.class);
         //клик по кнопке Войти в аккаунт на главной
         LoginPage loginPage = mainPage.clickEnterButton();

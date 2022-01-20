@@ -1,6 +1,7 @@
 package po;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -12,12 +13,11 @@ public class PasswordPage {
     @FindBy(how = How.XPATH, using = "//*[text()='Войти']")
     private SelenideElement loginButton;
 
+    @Step
     //метод клика по кнопке Зарегистрироваться
     public LoginPage clickRegisterButton() {
-        this.loginButton.scrollTo();
-        this.loginButton.click();
+        loginButton.scrollTo();
+        loginButton.click();
         return page(LoginPage.class);
     }
-
-
 }

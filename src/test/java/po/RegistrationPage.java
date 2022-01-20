@@ -1,6 +1,7 @@
 package po;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -28,34 +29,40 @@ public class RegistrationPage {
     @FindBy(how = How.XPATH, using = "//*[text()='Войти']")
     private SelenideElement loginButton;
 
+    @Step
     //метод заполнения поля ввода имени
     public void setName(String name) {
         this.nameField.setValue(name);
     }
 
+    @Step
     //метод заполнения поля ввода email
     public void setEmail(String email) {
         this.emailField.setValue(email);
     }
 
+    @Step
     //метод заполнения поля ввода password
     public void setPassword(String password) {
         this.passwordField.setValue(password);
     }
 
+    @Step
     //метод клика по кнопке Зарегистрироваться
     public void clickRegistrationButton() {
-        this.registrationButton.scrollTo();
-        this.registrationButton.click();
+        registrationButton.scrollTo();
+        registrationButton.click();
     }
 
+    @Step
     //метод клика по кнопке Войти
     public LoginPage clickLoginButton() {
-        this.loginButton.scrollTo();
-        this.loginButton.click();
+        loginButton.scrollTo();
+        loginButton.click();
         return page(LoginPage.class);
     }
 
+    @Step
     //метод регистрации пользователя
     public void registration(String name, String password, String email) {
         setName(name);
@@ -64,10 +71,9 @@ public class RegistrationPage {
         clickRegistrationButton();
     }
 
+    @Step
     //метод проверки текста ошибки
     public void checkErrorText(String text) {
         textError.shouldHave(exactText(text));
     }
-
-
 }

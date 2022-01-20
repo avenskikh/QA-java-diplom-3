@@ -1,5 +1,6 @@
 package test.yandex;
 
+import io.qameta.allure.junit4.DisplayName;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
 import po.LoginPage;
@@ -15,6 +16,7 @@ public class RegistrationTest {
     public static final String BASE_URL = "https://stellarburgers.nomoreparties.site";
 
     @Test
+    @DisplayName("Проверка успешной регистрации")
     public void registration() {
         System.setProperty("webdriver.chrome.driver", "C:/yandexdriver-22.1.0.2410-win/yandexdriver.exe");
         //открывается страница и создаётся экземпляр класса страницы
@@ -32,6 +34,7 @@ public class RegistrationTest {
     }
 
     @Test
+    @DisplayName("Проверка ошибки при вводе некорректного пароля")
     public void registrationWithIncorrectPass() {
         System.setProperty("webdriver.chrome.driver", "C:/yandexdriver-22.1.0.2410-win/yandexdriver.exe");
         //открывается страница и создаётся экземпляр класса страницы

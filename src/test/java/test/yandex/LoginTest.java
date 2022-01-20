@@ -1,6 +1,7 @@
 package test.yandex;
 
 import com.UserOperations;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,6 +30,7 @@ public class LoginTest {
     }
 
     @Test
+    @DisplayName("Проверка входа по кнопке «Войти в аккаунт» на главной")
     public void loginFromMainPage() {
         //регистрация нового пользователя
         Map<String, String> credentials = userOperations.register();
@@ -46,6 +48,7 @@ public class LoginTest {
     }
 
     @Test
+    @DisplayName("Проверка входа через кнопку «Личный кабинет»")
     public void loginFromPersonArea() {
         //регистрация нового пользователя
         Map<String, String> credentials = userOperations.register();
@@ -63,6 +66,7 @@ public class LoginTest {
     }
 
     @Test
+    @DisplayName("Проверка входа через кнопку в форме регистрации")
     public void loginFromRegistrationForm() {
         //регистрация нового пользователя
         Map<String, String> credentials = userOperations.register();
@@ -84,6 +88,7 @@ public class LoginTest {
     }
 
     @Test
+    @DisplayName("Проверка входа через кнопку в форме восстановления пароля")
     public void loginFromRefreshPasswordForm() {
         //регистрация нового пользователя
         Map<String, String> credentials = userOperations.register();
